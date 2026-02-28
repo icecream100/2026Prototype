@@ -93,11 +93,11 @@
 
                 <div class="nav-group-title">视频权限管理</div>
                 <a href="104_直接共享.html" class="nav-item">
-                    <span>📱</span> 应用管理
+                    <span>📱</span> 直接共享
                 </a>
                 <!-- <span>🎨</span> 应用编排 (Coming Soon) -->
                 <a href="104_代理共享.html" class="nav-item">
-                    <span>🔗</span> 上级平台
+                    <span>🔗</span> 代理共享
                 </a>
 
                 <div class="nav-group-title">权限审批管理</div>
@@ -169,12 +169,6 @@
                             </div>
                         </div>
 
-                        <div
-                            style="padding: 12px; border-top: 1px solid var(--border-color); text-align: center; display: flex; flex-direction: column; gap: 8px;">
-                            <button class="btn btn-secondary w-full" onclick="showToast('目录已重置')">重置目录树</button>
-                            <button class="btn btn-secondary w-full" onclick="confirmResetDeviceData()"
-                                style="color: var(--danger); border-color: var(--border-color);">一键重置设备数据</button>
-                        </div>
                     </div>
 
                     <!-- List Content -->
@@ -183,7 +177,7 @@
                         <div class="filter-bar">
                             <div style="flex: 1; max-width: 240px;">
                                 <label class="input-label">搜索设备</label>
-                                <input type="text" class="glass-input" placeholder="名称/平台编码/通道编码/共享编码">
+                                <input type="text" class="glass-input" placeholder="输入设备名称">
                             </div>
                             <div style="flex: 1; max-width: 140px;">
                                 <label class="input-label">在线状态</label>
@@ -193,22 +187,7 @@
                                     <option>离线</option>
                                 </select>
                             </div>
-                            <div style="flex: 1; max-width: 160px;">
-                                <label class="input-label">下级平台</label>
-                                <select class="glass-input">
-                                    <option>全部</option>
-                                    <option>省教育厅监管平台</option>
-                                    <option>市公安局汇聚平台</option>
-                                </select>
-                            </div>
-                            <div style="flex: 1; max-width: 120px;">
-                                <label class="input-label">有无坐标</label>
-                                <select class="glass-input">
-                                    <option>全部</option>
-                                    <option>有</option>
-                                    <option>无</option>
-                                </select>
-                            </div>
+
                             <div style="display: flex; align-items: flex-end; gap: 8px;">
                                 <button class="btn btn-primary" onclick="searchData()">查询</button>
                                 <button class="btn btn-secondary">重置</button>
@@ -227,10 +206,8 @@
                                         <th style="width: 200px;">设备名称</th>
                                         <th>归属组织</th>
                                         <th>归属组织编码</th>
-                                        <th>下级平台</th>
-                                        <th>平台编码/设备标识</th>
-                                        <th>通道编码</th>
-                                        <th>共享编码</th>
+                                        <th>设备ID</th>
+                                        <th>在线状态</th>
                                         <th>操作</th>
                                     </tr>
                                 </thead>
@@ -311,11 +288,7 @@
                             </table>
                         </div>
 
-                        <!-- Details Modal Label Update -->
-                        <div class="section-container" style="margin-bottom: 24px; display: none;">
-                            <!-- Hidden template for update logic reference -->
-                            <label class="input-label">平台编码/设备标识</label>
-                        </div>
+                        <!-- Details Modal Content Replaced by Javascript Below -->
                     </div>
                 </div>
             </div>
@@ -340,103 +313,25 @@
                     <h4 class="section-title">基础信息</h4>
                     <div class="info-grid readonly-grid">
                         <div class="input-group">
-                            <label class="input-label">设备原始名称</label>
-                            <div class="readonly-value">大华枪机通道</div>
+                            <label class="input-label">设备名称</label>
+                            <div class="readonly-value">八楼大华枪机</div>
                         </div>
                         <div class="input-group">
-                            <label class="input-label">平台名称</label>
-                            <div class="readonly-value">武汉大华枪机</div>
+                            <label class="input-label">归属目录名称</label>
+                            <div class="readonly-value">一楼大厅</div>
                         </div>
                         <div class="input-group">
-                            <label class="input-label">平台编码/设备标识</label>
-                            <div class="readonly-value">99080300001320000005</div>
-                        </div>
-
-                        <div class="input-group">
-                            <label class="input-label">通道编码</label>
-                            <div class="readonly-value">99080300001310000501</div>
-                        </div>
-                        <div class="input-group">
-                            <label class="input-label">共享编码</label>
-                            <div class="readonly-value">34020000013100000034</div>
-                        </div>
-                        <div class="input-group">
-                            <label class="input-label">视频通道编码</label>
-                            <div class="readonly-value">33070200001310000502</div>
-                        </div>
-
-                        <div class="input-group">
-                            <label class="input-label">设备类型</label>
-                            <div class="readonly-value">枪机</div>
-                        </div>
-                        <div class="input-group">
-                            <label class="input-label">设备厂商</label>
-                            <div class="readonly-value">大华 (Dahua)</div>
-                        </div>
-                        <div class="input-group">
-                            <label class="input-label">联网属性</label>
-                            <div class="readonly-value">直连设备</div>
-                        </div>
-
-                        <div class="input-group">
-                            <label class="input-label">原始经度</label>
-                            <div class="readonly-value">--</div>
-                        </div>
-                        <div class="input-group">
-                            <label class="input-label">原始纬度</label>
-                            <div class="readonly-value">--</div>
+                            <label class="input-label">设备ID</label>
+                            <div class="readonly-value">33070200001310000001</div>
                         </div>
                         <div class="input-group">
                             <label class="input-label">在线状态</label>
                             <div class="readonly-value">在线</div>
                         </div>
-
-                        <div class="input-group">
-                            <label class="input-label">应用场景</label>
-                            <div class="readonly-value">治安</div>
-                        </div>
-                        <div class="input-group">
-                            <label class="input-label">监控方位</label>
-                            <div class="readonly-value">东向</div>
-                        </div>
-                        <div class="input-group">
-                            <label class="input-label">室内/室外</label>
-                            <div class="readonly-value">室内</div>
-                        </div>
-
-                        <div class="input-group">
-                            <label class="input-label">上级平台</label>
-                            <div class="readonly-value">--</div>
-                        </div>
-                        <div class="input-group">
-                            <label class="input-label">管理单位</label>
-                            <div class="readonly-value">金华理工保卫处</div>
-                        </div>
-                        <div class="input-group">
-                            <label class="input-label">能力等级</label>
-                            <div class="readonly-value">5级</div>
-                        </div>
-
-                        <div class="input-group" style="grid-column: span 3;">
+                        <div class="input-group" style="grid-column: span 2;">
                             <label class="input-label">行政区划</label>
                             <div class="readonly-value">浙江省 / 金华市 / 婺城区</div>
                         </div>
-
-                        <div class="input-group" style="grid-column: span 3;">
-                            <label class="input-label">详细地址</label>
-                            <div class="readonly-value">金华市婺城区环城南路99号金华理工学院教学楼A区1楼</div>
-                        </div>
-
-                        <div class="input-group" style="grid-column: span 3;">
-                            <label class="input-label">注册应用</label>
-                            <div class="readonly-value tags-container">
-                                <span class="app-tag">智慧社区</span>
-                                <span class="app-tag">智慧安检一体</span>
-                                <span class="app-tag">大数据组应用</span>
-                                <span class="app-tag">+ 3 ...</span>
-                            </div>
-                        </div>
-
                         <div class="input-group" style="grid-column: span 3;">
                             <label class="input-label">设备标签</label>
                             <div class="readonly-value">重点区域, 室内, 人流密集</div>
@@ -454,11 +349,9 @@
 
                     <form id="manageForm" class="view-mode">
                         <div class="info-grid editable-grid">
-
-                            <!-- Name Row -->
+                            <!-- Row 1 -->
                             <div class="input-group">
-                                <label class="input-label"><span style="color:red">*</span>
-                                    设备名称</label>
+                                <label class="input-label"><span style="color:red">*</span> 设备名称</label>
                                 <div class="input-wrapper">
                                     <input type="text" class="form-input" value="八楼大华枪机" id="cameraName" disabled>
                                     <div class="input-actions">
@@ -490,18 +383,16 @@
                                 </div>
                             </div>
 
-                            <!-- Row 2: Selects -->
+                            <!-- Row 2 -->
                             <div class="input-group">
-                                <label class="input-label">枪球机</label>
+                                <label class="input-label">枪球机 (设备类型)</label>
                                 <div class="input-wrapper">
                                     <select class="form-select" disabled>
-                                        <option value="">请选择枪球机</option>
-                                        <option value="1">枪机</option>
+                                        <option value="">请选择设备类型</option>
+                                        <option value="1" selected>枪机</option>
                                         <option value="2">球机</option>
+                                        <option value="3">传感器</option>
                                     </select>
-                                    <div class="input-actions">
-                                        <i class="icon-reset" onclick="showToast('已重置')">↺</i>
-                                    </div>
                                 </div>
                             </div>
                             <div class="input-group">
@@ -509,54 +400,39 @@
                                 <div class="input-wrapper">
                                     <select class="form-select" disabled>
                                         <option value="">请选择设备厂商</option>
-                                        <option value="dahua">大华</option>
+                                        <option value="dahua" selected>大华</option>
                                         <option value="hikvision">海康威视</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="input-group">
+                                <label class="input-label">安装位置</label>
+                                <div class="input-wrapper">
+                                    <input type="text" class="form-input" value="一楼大厅东门" id="installLocation" disabled>
+                                    <div class="input-actions">
+                                        <i class="icon-close" onclick="clearInput('installLocation')">×</i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Row 3 -->
+                            <div class="input-group">
                                 <label class="input-label">联网属性</label>
                                 <div class="input-wrapper">
                                     <select class="form-select" disabled>
                                         <option value="">请选择联网属性</option>
-                                        <option value="1">直连</option>
-                                        <option value="2">平台接入</option>
+                                        <option value="1">局域网</option>
+                                        <option value="2">专网</option>
                                     </select>
                                 </div>
                             </div>
-
-                            <!-- Row 3: Admin Division -->
-                            <div class="input-group" style="grid-column: span 3;">
-                                <label class="input-label">行政区划</label>
-                                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
-                                    <select class="form-select" disabled>
-                                        <option value="">请选择省</option>
-                                        <option value="330000">浙江省</option>
-                                    </select>
-                                    <select class="form-select" disabled>
-                                        <option value="">请选择市</option>
-                                        <option value="330700">金华市</option>
-                                    </select>
-                                    <select class="form-select" disabled>
-                                        <option value="">请选择县</option>
-                                        <option value="330702">婺城区</option>
-                                    </select>
-                                    <select class="form-select" disabled>
-                                        <option value="">请选择镇</option>
-                                        <option value="">--</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <!-- Row 4: Place Type, Management Unit, Capability Level -->
                             <div class="input-group">
                                 <label class="input-label">场所类型</label>
                                 <div class="input-wrapper">
                                     <select class="form-select" disabled>
                                         <option value="">请选择场所类型</option>
-                                        <option value="public">公共场所</option>
-                                        <option value="road">道路卡口</option>
-                                        <option value="school">校园安全</option>
+                                        <option value="1" selected>教学区域</option>
+                                        <option value="2">办公区域</option>
                                     </select>
                                 </div>
                             </div>
@@ -565,26 +441,23 @@
                                 <div class="input-wrapper">
                                     <select class="form-select" disabled>
                                         <option value="">请选择管理单位</option>
-                                        <option value="dept1">保卫处</option>
-                                        <option value="dept2">行政部</option>
+                                        <option value="1" selected>保卫处</option>
+                                        <option value="2">后勤处</option>
                                     </select>
                                 </div>
                             </div>
+
+                            <!-- Row 4 -->
                             <div class="input-group">
                                 <label class="input-label">能力级别</label>
                                 <div class="input-wrapper">
                                     <select class="form-select" disabled>
                                         <option value="">请选择能力级别</option>
-                                        <option value="1">1级</option>
+                                        <option value="1" selected>1级</option>
                                         <option value="2">2级</option>
-                                        <option value="3">3级</option>
-                                        <option value="4">4级</option>
-                                        <option value="5" selected>5级</option>
                                     </select>
                                 </div>
                             </div>
-
-                            <!-- Row 5: Monitoring Direction, Indoor/Outdoor, Theme -->
                             <div class="input-group">
                                 <label class="input-label">监控方向</label>
                                 <div class="input-wrapper">
@@ -607,25 +480,25 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="input-group">
-                                <label class="input-label">主题分类</label>
-                                <div class="input-wrapper">
-                                    <select class="form-select" disabled>
-                                        <option value="">请选择主题分类</option>
-                                        <option value="security">治安防控</option>
-                                        <option value="traffic">交通管理</option>
-                                    </select>
-                                </div>
-                            </div>
 
-                            <!-- Row 6: Geo Region, Eagle Eye -->
+                            <!-- Row 5 -->
                             <div class="input-group">
                                 <label class="input-label">地理区域</label>
                                 <div class="input-wrapper">
                                     <select class="form-select" disabled>
                                         <option value="">请选择地理区域</option>
-                                        <option value="area1">重点区域</option>
+                                        <option value="area1" selected>重点区域</option>
                                         <option value="area2">普通区域</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">主题分类</label>
+                                <div class="input-wrapper">
+                                    <select class="form-select" disabled>
+                                        <option value="">请选择主题分类</option>
+                                        <option value="security" selected>治安防控</option>
+                                        <option value="traffic">交通管理</option>
                                     </select>
                                 </div>
                             </div>
@@ -639,20 +512,26 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="input-group"></div> <!-- Spacer -->
 
-                            <!-- Address -->
-                            <div class="input-group" style="grid-column: span 3;">
-                                <label class="input-label">安装地址</label>
-                                <div class="input-wrapper">
-                                    <input type="text" class="form-input" placeholder="请输入详细地址" id="installAddress"
-                                        disabled>
-                                    <div class="input-actions">
-                                        <i class="icon-close" onclick="clearInput('installAddress')">×</i>
+                            <!-- Row 6 Images -->
+                            <div class="input-group" style="grid-column: span 3; display: flex; gap: 24px;">
+                                <div style="flex: 1; max-width: 200px;">
+                                    <label class="input-label">效果图</label>
+                                    <div
+                                        style="height: 120px; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #94a3b8; cursor: pointer; transition: all 0.2s;">
+                                        <span style="font-size: 24px;">+</span>
+                                        <span style="font-size: 12px; margin-top: 4px;">点击上传现场图</span>
+                                    </div>
+                                </div>
+                                <div style="flex: 1; max-width: 200px;">
+                                    <label class="input-label">缩略图</label>
+                                    <div
+                                        style="height: 120px; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #94a3b8; cursor: pointer; transition: all 0.2s;">
+                                        <span style="font-size: 20px; margin-bottom: 4px;">📷</span>
+                                        <span style="font-size: 12px;">实时截图/上传</span>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </form>
                 </div>
@@ -673,31 +552,7 @@
         </div>
     </div>
 
-    <!-- Confirm Reset Modal (New) -->
-    <div class="modal-overlay" id="confirmDataResetModal">
-        <div class="modal-content" style="width: 450px;">
-            <div class="modal-header">
-                <h3 class="modal-title">⚠️ 重置设备数据</h3>
-                <button class="modal-close" onclick="closeConfirmResetDeviceData()">×</button>
-            </div>
-            <div class="modal-body">
-                <p style="color: var(--text-main); margin-bottom: 12px; font-weight: 500;">
-                    确定要重置【一键重置】组织下的设备数据吗？
-                </p>
-                <div
-                    style="background: #fff1f2; color: #b91c1c; padding: 12px; border-radius: 4px; font-size: 13px; line-height: 1.6;">
-                    重置后，您手动修改的设备名称、经纬度信息将丢失，并恢复为下级平台推送的原始数据，且无法恢复。
-                </div>
-                <div style="margin-top: 16px; font-size: 13px; color: var(--text-secondary);">
-                    预计影响 <strong>126</strong> 个设备
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" onclick="closeConfirmResetDeviceData()">取消</button>
-                <button class="btn btn-primary" onclick="executeDataReset()">确定重置</button>
-            </div>
-        </div>
-    </div>
+    <!-- Removing Confirm Reset Modal since the button was removed -->
 
     <style>
         /* New Modal Styles */

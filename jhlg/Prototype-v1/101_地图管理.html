@@ -66,11 +66,11 @@
 
                 <div class="nav-group-title">视频权限管理</div>
                 <a href="104_直接共享.html" class="nav-item">
-                    <span>📱</span> 应用管理
+                    <span>📱</span> 直接共享
                 </a>
                 <!-- <span>🎨</span> 应用编排 (Coming Soon) -->
                 <a href="104_代理共享.html" class="nav-item">
-                    <span>🔗</span> 上级平台
+                    <span>🔗</span> 代理共享
                 </a>
 
                 <div class="nav-group-title">权限审批管理</div>
@@ -97,18 +97,10 @@
             </header>
 
             <div class="content-area">
-                <!-- Filters -->
                 <div class="filter-bar">
                     <div style="flex: 1; min-width: 200px;">
                         <label class="input-label">地图名称</label>
                         <input type="text" class="glass-input" placeholder="请输入地图名称">
-                    </div>
-                    <div style="flex: 1; min-width: 200px;">
-                        <label class="input-label">行政区划</label>
-                        <select class="glass-input">
-                            <option value="">全部区域</option>
-                            <option value="330700">金华市</option>
-                        </select>
                     </div>
                     <div style="display: flex; align-items: flex-end; gap: 8px;">
                         <button class="btn btn-primary" onclick="searchData()">查询</button>
@@ -124,9 +116,6 @@
                         <thead>
                             <tr>
                                 <th>地图名称</th>
-                                <th>行政区划</th>
-                                <th>关联目录</th>
-                                <th>关联设备数</th>
                                 <th>状态</th>
                                 <th>创建人</th>
                                 <th>创建时间</th>
@@ -136,9 +125,6 @@
                         <tbody>
                             <tr>
                                 <td>金华理工主校区</td>
-                                <td>浙江省/金华市/婺城区</td>
-                                <td>金华理工学院</td>
-                                <td>156</td>
                                 <td><span class="status-tag status-success">启用</span></td>
                                 <td>admin</td>
                                 <td>2025-10-12 10:00:00</td>
@@ -152,9 +138,6 @@
                             </tr>
                             <tr>
                                 <td>教学楼A区详图</td>
-                                <td>浙江省/金华市/婺城区</td>
-                                <td>教学楼A区</td>
-                                <td>45</td>
                                 <td><span class="status-tag status-warning">草稿</span></td>
                                 <td>zhangsan</td>
                                 <td>2025-10-15 14:30:00</td>
@@ -182,32 +165,9 @@
             </div>
             <div class="modal-body">
                 <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                    <div class="input-group">
+                    <div class="input-group" style="grid-column: span 2;">
                         <label class="input-label"><span style="color:red">*</span> 地图名称</label>
                         <input type="text" class="glass-input" placeholder="请输入地图名称">
-                    </div>
-                    <div class="input-group">
-                        <label class="input-label"><span style="color:red">*</span> 关联目录</label>
-                        <select class="glass-input">
-                            <option>请选择目录</option>
-                            <option>金华理工学院</option>
-                            <option>教学楼A区</option>
-                        </select>
-                    </div>
-
-                    <div class="input-group" style="grid-column: span 2;">
-                        <label class="input-label">行政区划</label>
-                        <div style="display: flex; gap: 10px;">
-                            <select class="glass-input">
-                                <option>浙江省</option>
-                            </select>
-                            <select class="glass-input">
-                                <option>金华市</option>
-                            </select>
-                            <select class="glass-input">
-                                <option>婺城区</option>
-                            </select>
-                        </div>
                     </div>
 
                     <div class="input-group" style="grid-column: span 2;">

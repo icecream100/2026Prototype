@@ -52,11 +52,11 @@
 
                 <div class="nav-group-title">视频权限管理</div>
                 <a href="104_直接共享.html" class="nav-item">
-                    <span>📱</span> 应用管理
+                    <span>📱</span> 直接共享
                 </a>
                 <!-- <span>🎨</span> 应用编排 (Coming Soon) -->
                 <a href="104_代理共享.html" class="nav-item">
-                    <span>🔗</span> 上级平台
+                    <span>🔗</span> 代理共享
                 </a>
 
                 <div class="nav-group-title">权限审批管理</div>
@@ -161,19 +161,22 @@
                     <div style="margin-bottom: 16px; display: flex; align-items: center; gap: 16px;">
                         <button class="btn btn-secondary" onclick="hideGroupDetail()">← 返回</button>
                         <h3 style="margin: 0;">分组详情: <span id="detailGroupName">重点监控通道</span></h3>
-                        <div class="status-tag status-success" style="font-size: 12px;">ID: <span id="detailGroupId">1001</span></div>
+                        <div class="status-tag status-success" style="font-size: 12px;">ID: <span
+                                id="detailGroupId">1001</span></div>
                     </div>
 
                     <!-- Info Overview -->
                     <div style="display: flex; gap: 16px; margin-bottom: 16px;">
-                        <div class="glass-panel" style="flex: 1; padding: 16px; display: flex; align-items: center; justify-content: space-between;">
+                        <div class="glass-panel"
+                            style="flex: 1; padding: 16px; display: flex; align-items: center; justify-content: space-between;">
                             <div>
                                 <div style="color: #666; font-size: 12px;">设备总数</div>
                                 <div style="font-size: 24px; font-weight: bold;">35</div>
                             </div>
                             <div style="font-size: 24px;">📦</div>
                         </div>
-                        <div class="glass-panel" style="flex: 1; padding: 16px; display: flex; align-items: center; justify-content: space-between;">
+                        <div class="glass-panel"
+                            style="flex: 1; padding: 16px; display: flex; align-items: center; justify-content: space-between;">
                             <div>
                                 <div style="color: #666; font-size: 12px;">在线设备</div>
                                 <div style="font-size: 24px; font-weight: bold; color: var(--success);">32</div>
@@ -184,13 +187,14 @@
                     </div>
 
                     <!-- Device List in Group -->
-                     <div class="glass-panel">
-                        <div class="filter-bar" style="border-bottom: 1px solid #eee; margin-bottom: 0; padding-bottom: 16px;">
+                    <div class="glass-panel">
+                        <div class="filter-bar"
+                            style="border-bottom: 1px solid #eee; margin-bottom: 0; padding-bottom: 16px;">
                             <div style="flex: 1; min-width: 150px;">
                                 <label class="input-label">设备名称</label>
                                 <input type="text" class="glass-input" placeholder="模糊搜索">
                             </div>
-                             <div style="flex: 1; min-width: 150px;">
+                            <div style="flex: 1; min-width: 150px;">
                                 <label class="input-label">产品名称</label>
                                 <input type="text" class="glass-input" placeholder="模糊搜索">
                             </div>
@@ -199,10 +203,11 @@
                                 <button class="btn btn-secondary" onclick="resetSearch()">重置</button>
                             </div>
                         </div>
-                        
+
                         <div style="padding: 12px; display: flex; gap: 8px;">
-                             <button class="btn btn-primary" onclick="openAddDeviceModal()">+ 加入设备</button>
-                             <button class="btn btn-secondary" style="color: var(--danger); border-color: var(--danger);" onclick="batchRemoveDevices()">批量移除</button>
+                            <button class="btn btn-primary" onclick="openAddDeviceModal()">+ 加入设备</button>
+                            <button class="btn btn-secondary" style="color: var(--danger); border-color: var(--danger);"
+                                onclick="batchRemoveDevices()">批量移除</button>
                         </div>
 
                         <table class="data-table">
@@ -224,7 +229,9 @@
                                     <td>海康威视IPC</td>
                                     <td><span class="status-tag status-success">在线</span></td>
                                     <td>
-                                        <button class="btn btn-secondary" style="padding: 4px 8px; font-size: 12px; color: var(--danger); border-color: var(--danger);" onclick="removeDevice()">移除</button>
+                                        <button class="btn btn-secondary"
+                                            style="padding: 4px 8px; font-size: 12px; color: var(--danger); border-color: var(--danger);"
+                                            onclick="removeDevice()">移除</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -234,12 +241,14 @@
                                     <td>海康威视IPC</td>
                                     <td><span class="status-tag status-warning">离线</span></td>
                                     <td>
-                                        <button class="btn btn-secondary" style="padding: 4px 8px; font-size: 12px; color: var(--danger); border-color: var(--danger);" onclick="removeDevice()">移除</button>
+                                        <button class="btn btn-secondary"
+                                            style="padding: 4px 8px; font-size: 12px; color: var(--danger); border-color: var(--danger);"
+                                            onclick="removeDevice()">移除</button>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
-                     </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -278,7 +287,8 @@
             </div>
             <div class="modal-body" style="display: flex; gap: 16px; height: 500px;">
                 <!-- Left: Device Selection -->
-                <div style="flex: 1; display: flex; flex-direction: column; border: 1px solid #eee; border-radius: 4px;">
+                <div
+                    style="flex: 1; display: flex; flex-direction: column; border: 1px solid #eee; border-radius: 4px;">
                     <div style="padding: 12px; border-bottom: 1px solid #eee; background: #f8fafc;">
                         <div style="display: flex; gap: 8px; margin-bottom: 8px;">
                             <select class="glass-input" style="flex: 1;">
@@ -291,21 +301,24 @@
                     </div>
                     <div style="flex: 1; overflow-y: auto; padding: 8px;">
                         <!-- Mock Device List -->
-                        <div class="device-item" onclick="toggleDeviceSelection(this, 'DEV_003', '东门人脸机01')" style="padding: 8px; border-bottom: 1px solid #eee; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                        <div class="device-item" onclick="toggleDeviceSelection(this, 'DEV_003', '东门人脸机01')"
+                            style="padding: 8px; border-bottom: 1px solid #eee; cursor: pointer; display: flex; align-items: center; gap: 8px;">
                             <input type="checkbox" style="pointer-events: none;">
                             <div>
                                 <div style="font-weight: bold; font-size: 14px;">东门人脸机01</div>
                                 <div style="font-size: 12px; color: #666;">大华门禁 | DEV_003</div>
                             </div>
                         </div>
-                        <div class="device-item" onclick="toggleDeviceSelection(this, 'DEV_004', '东门人脸机02')" style="padding: 8px; border-bottom: 1px solid #eee; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                        <div class="device-item" onclick="toggleDeviceSelection(this, 'DEV_004', '东门人脸机02')"
+                            style="padding: 8px; border-bottom: 1px solid #eee; cursor: pointer; display: flex; align-items: center; gap: 8px;">
                             <input type="checkbox" style="pointer-events: none;">
                             <div>
                                 <div style="font-weight: bold; font-size: 14px;">东门人脸机02</div>
                                 <div style="font-size: 12px; color: #666;">大华门禁 | DEV_004</div>
                             </div>
                         </div>
-                        <div class="device-item" onclick="toggleDeviceSelection(this, 'DEV_005', '西门道闸')" style="padding: 8px; border-bottom: 1px solid #eee; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                        <div class="device-item" onclick="toggleDeviceSelection(this, 'DEV_005', '西门道闸')"
+                            style="padding: 8px; border-bottom: 1px solid #eee; cursor: pointer; display: flex; align-items: center; gap: 8px;">
                             <input type="checkbox" style="pointer-events: none;">
                             <div>
                                 <div style="font-weight: bold; font-size: 14px;">西门道闸</div>
@@ -316,10 +329,13 @@
                 </div>
 
                 <!-- Right: Selected Devices -->
-                <div style="flex: 1; display: flex; flex-direction: column; border: 1px solid #eee; border-radius: 4px;">
-                    <div style="padding: 12px; border-bottom: 1px solid #eee; background: #f8fafc; display: flex; justify-content: space-between; align-items: center;">
+                <div
+                    style="flex: 1; display: flex; flex-direction: column; border: 1px solid #eee; border-radius: 4px;">
+                    <div
+                        style="padding: 12px; border-bottom: 1px solid #eee; background: #f8fafc; display: flex; justify-content: space-between; align-items: center;">
                         <span style="font-weight: bold;">已选设备 (<span id="selectedCount">0</span>)</span>
-                        <button class="btn btn-secondary" style="padding: 2px 6px; font-size: 12px;" onclick="clearSelection()">清空</button>
+                        <button class="btn btn-secondary" style="padding: 2px 6px; font-size: 12px;"
+                            onclick="clearSelection()">清空</button>
                     </div>
                     <div id="selectedDeviceList" style="flex: 1; overflow-y: auto; padding: 8px;">
                         <!-- Selected items will be added here -->
@@ -364,7 +380,7 @@
         function deleteGroup() {
             // Logic: if associated devices > 0, prevent delete
             // For demo, we assume ID 1001 has devices
-            const hasDevices = Math.random() > 0.5; 
+            const hasDevices = Math.random() > 0.5;
 
             if (hasDevices) {
                 showToast('该分组下存在关联设备，请先移除设备', 'error');
@@ -395,7 +411,7 @@
         }
 
         function batchRemoveDevices() {
-             showConfirm('确定要批量移除选中的设备吗？', () => {
+            showConfirm('确定要批量移除选中的设备吗？', () => {
                 showToast('已批量移除设备', 'success');
             });
         }
@@ -414,7 +430,7 @@
 
         function toggleDeviceSelection(el, id, name) {
             const checkbox = el.querySelector('input[type="checkbox"]');
-            
+
             if (selectedDevices.has(id)) {
                 selectedDevices.delete(id);
                 checkbox.checked = false;
@@ -447,21 +463,21 @@
         }
 
         function removeSelectionFromRight(id) {
-             // Find left item and uncheck
-             // This is a simplified mock. In real app, we'd map IDs to DOM elements better.
-             // For now, just remove from set and update UI manually if possible or just clear set logic
-             selectedDevices.delete(id);
-             removeSelectedTag(id);
-             
-             // Try to uncheck left side if visible
-             const items = document.querySelectorAll('.device-item');
-             items.forEach(item => {
-                 if (item.getAttribute('onclick').includes(id)) {
-                     item.querySelector('input').checked = false;
-                     item.style.background = 'transparent';
-                 }
-             });
-             updateSelectedCount();
+            // Find left item and uncheck
+            // This is a simplified mock. In real app, we'd map IDs to DOM elements better.
+            // For now, just remove from set and update UI manually if possible or just clear set logic
+            selectedDevices.delete(id);
+            removeSelectedTag(id);
+
+            // Try to uncheck left side if visible
+            const items = document.querySelectorAll('.device-item');
+            items.forEach(item => {
+                if (item.getAttribute('onclick').includes(id)) {
+                    item.querySelector('input').checked = false;
+                    item.style.background = 'transparent';
+                }
+            });
+            updateSelectedCount();
         }
 
         function clearSelection() {
